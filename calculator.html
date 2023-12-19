@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractive Mini Calculator</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .calculator-container {
+            text-align: center;
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .no input {
+            width: 80px;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .button button {
+            width: 80px;
+            height: 40px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Attractive Mini Calculator</h1>
+    <div class="calculator-container">
+        <div class="no">
+            <input type="number" id="no1" placeholder="  No 1">
+            <input type="number" id="no2" placeholder=" No 2" >
+        </div>
+        <br>
+        <div class="button">
+            <button onclick="add()">Addition</button>
+            <button onclick="sub()">Subtract</button>
+            <button onclick="multi()">Multiply</button>
+            <button onclick="divide()">Division</button>
+        </div>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        let one = document.getElementById("no1");
+        let two = document.getElementById("no2");
+        let resultDisplay = document.getElementById("result");
+
+        function add() {
+            var totalValue = Number(one.value) + Number(two.value);
+            resultDisplay.textContent = `Result: ${totalValue}`;
+        }
+
+        function sub() {
+            var totalValue = Number(one.value) - Number(two.value);
+            resultDisplay.textContent = `Result: ${totalValue}`;
+        }
+
+        function multi() {
+            var totalValue = Number(one.value) * Number(two.value);
+            resultDisplay.textContent = `Result: ${totalValue}`;
+        }
+
+        function divide() {
+            var totalValue = Number(one.value) / Number(two.value);
+            resultDisplay.textContent = `Result: ${totalValue.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
